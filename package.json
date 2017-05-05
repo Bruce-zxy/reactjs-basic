@@ -1,0 +1,22 @@
+{
+  "name": "reactjs-basic",
+  "version": "1.0.0",
+  "description": "Learning reactjs by following youtube video: reactjs basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunzhiWei/reactjs-basic.git"
+  },
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Chris Wei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YunzhiWei/reactjs-basic/issues"
+  },
+  "homepage": "https://github.com/YunzhiWei/reactjs-basic#readme"
+}
