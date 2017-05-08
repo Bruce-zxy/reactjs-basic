@@ -10,8 +10,11 @@ class App extends React.Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path={"user"} component={User} />
-        <Route path={"home"} component={Home} />
+        <Route path={"/"} component={Root}>
+          <Route path={"user"} component={User} />
+          <Route path={"home"} component={Home} />
+        </Route>
+        <Route path={"home-single"} component={Home} />
       </Router>
     );
   }
