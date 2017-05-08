@@ -24,7 +24,8 @@
   "homepage": "https://github.com/YunzhiWei/reactjs-basic#readme",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
