@@ -12,7 +12,7 @@ class App extends React.Component {
       <Router history={browserHistory}>
         <Route path={"/"} component={Root}>
           <IndexRoute component={Home}/>
-          <Route path={"user"} component={User} />
+          <Route path={"user/:id"} component={User} />
           <Route path={"home"} component={Home} />
         </Route>
         <Route path={"home-single"} component={Home} />
