@@ -18,6 +18,8 @@ export class Home extends React.Component {
             {this.props.user.hobbies.map((hobby, idx) => <li key={idx}>{idx + 1}. {hobby}</li>)}
           </ul>
         </div>
+        <hr/>
+        {this.props.children}
       </div>
     );
   }
@@ -26,5 +28,6 @@ export class Home extends React.Component {
 Home.propTypes = {
   name: React.PropTypes.string,
   age: React.PropTypes.number,
-  user: React.PropTypes.object
+  user: React.PropTypes.object,
+  children: React.PropTypes.element.isRequired
 };
