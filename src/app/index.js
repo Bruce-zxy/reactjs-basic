@@ -1,22 +1,29 @@
 import React from "react";
 import {render} from "react-dom";
-import {Router, Route, browserHistory, IndexRoute} from "react-router";
 
-import {Root} from "./components/Root";
-import {Home} from "./components/Home";
 import {User} from "./components/User";
+import {Main} from "./components/Main";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "Max"
+    }
+  }
+
+  changeUsername(newName) {
+    this.setState({
+      username: newName
+    })
+  }
+
   render() {
     return (
-      <Router history={browserHistory}>
-        <Route path={"/"} component={Root}>
-          <IndexRoute component={Home}/>
-          <Route path={"user/:id"} component={User} />
-          <Route path={"home"} component={Home} />
-        </Route>
-        <Route path={"home-single"} component={Home} />
-      </Router>
+      <div className="container">
+        <Main changeUsername={this.changeUsername.bind(this)} />
+        <User username={this.state.username} />
+      </div>
     );
   }
 }

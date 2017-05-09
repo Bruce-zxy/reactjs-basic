@@ -1,17 +1,22 @@
 import React from "react";
 
-export class User extends React.Component {
+export class Main extends React.Component {
   render() {
     return(
       <div>
         <div className="row">
           <div className="col-xs-12">
-            <h1>The User Page</h1>
+            <h1>The Main Page</h1>
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12">
-            <p>User Name: {this.props.username}</p>
+            <button
+              className="btn btn-primary"
+              onClick={() => this.props.changeUsername('Anna')}
+            >
+              Change the Username
+            </button>
           </div>
         </div>
       </div>
