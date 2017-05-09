@@ -6,7 +6,7 @@ import {createLogger} from "redux-logger";
 
 import {Provider} from "react-redux"
 
-import App from "./components/App";
+import App from "./container/App";
 
 const mathReducer = (state = {
     result: 1,

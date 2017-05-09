@@ -1,8 +1,7 @@
 import React from "react";
 
-export class User extends React.Component {
-  render() {
-    return(
+export const User = (props) => {
+  return (
       <div>
         <div className="row">
           <div className="col-xs-12">
@@ -11,10 +10,9 @@ export class User extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-12">
-            <p>User Name: {this.props.username}</p>
+            <p>User Name: {props.username}</p>
           </div>
         </div>
       </div>
-    );
-  }
+  );
 }
