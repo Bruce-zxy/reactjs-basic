@@ -1,8 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import {createLogger} from "redux-logger";
+import thunk from "redux-thunk";
 
-import math from "./reducers/mathReducer"
-import user from "./reducers/userReducer"
+import math from "./reducers/mathReducer";
+import user from "./reducers/userReducer";
 
 const myLogger = (store) => (next) => (action) => {
   console.log("Logged Action: ", action);
@@ -17,6 +18,7 @@ export default createStore(
   {},
   applyMiddleware(
     myLogger,
-    createLogger()
+    createLogger(),
+    thunk
   )
 );
