@@ -40,10 +40,18 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD":
-      state.result += action.payload;
+      state = {
+        ...state,
+        result: state.result + action.payload
+      };
+      state.lastValues.push(action.payload);
       break;
     case "SUBTRACT":
-      state.result -= action.payload;
+      state = {
+        ...state,
+        result: state.result - action.payload
+      };
+      state.lastValues.push(action.payload);
       break;
   }
   return state;
