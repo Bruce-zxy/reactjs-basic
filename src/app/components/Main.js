@@ -1,4 +1,8 @@
 import React from "react";
+// import { Button } from "antd";
+
+import Button from "antd/lib/button";
+import "antd/lib/button/style/css"; // 或者 antd/lib/button/style/css 加载 css 文件
 
 export const Main = (props) => {
   return(
@@ -7,6 +11,11 @@ export const Main = (props) => {
           <div className="col-xs-12">
             <h1>The Main Page</h1>
           </div>
+        </div>
+        <div>
+          <Button type="primary">Primary</Button>
+          <Button type="dashed">Dashed</Button>
+          <Button type="danger">Danger</Button>
         </div>
         <div className="row">
           <div className="col-xs-12">
