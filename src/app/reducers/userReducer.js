@@ -5,11 +5,9 @@ const userReducer = (state = {
   },
   action) => {
   switch (action.type) {
+    case "SET_NAME_START":
     case "SET_NAME":
-      state = {
-        ...state,
-        name: action.payload
-      };
+      return state;
       break;
     case "SET_NAME_FULFILLED":
       state = {

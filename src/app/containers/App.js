@@ -3,13 +3,16 @@ import {connect} from "react-redux";
 
 import {User} from "../components/User";
 import {Main} from "../components/Main";
-import {setName, setAge} from "../actions/userActions";
+import {setNameThunk, setNamePromise, setAge} from "../actions/userActions";
 
 class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Main changeUsername={(name) => this.props.setName(name)} />
+        <Main
+          changeUsernameThunk={(name) => this.props.setNameThunk(name)}
+          changeUsernamePromise={(name) => this.props.setNamePromise(name)}
+        />
         <User username={this.props.user.name} />
       </div>
     );
@@ -25,8 +28,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setName: (name) => {
-      dispatch(setName(name))
+    setNameThunk: (name) => {
+      dispatch(setNameThunk(name))
+    },
+    setNamePromise: (name) => {
+      dispatch(setNamePromise(name))
     },
     setAge: (age) => {
       dispatch(setAge(age))

@@ -12,9 +12,15 @@ export const Main = (props) => {
           <div className="col-xs-12">
             <button
               className="btn btn-primary"
-              onClick={() => props.changeUsername('Anna')}
+              onClick={() => props.changeUsernameThunk('Thunk')}
             >
-              Change the Username
+              Thunk
+            </button>
+            <button
+              className="btn btn-primary"
+              onClick={() => props.changeUsernamePromise('Promise')}
+            >
+              Promise
             </button>
           </div>
         </div>
