@@ -5,18 +5,19 @@ const redditReducer = (state = {
   },
   action) => {
   switch (action.type) {
-    case "GET_POSTS_START":
-    case "GET_POSTS":
+    case "GET_REDDIT_START":
+    case "GET_REDDIT":
       return state;
       break;
-    case "GET_POSTS_SUCCESS":
-    case "GET_POSTS_FULFILLED":
+    case "GET_REDDIT_SUCCESS":
+    case "GET_REDDIT_FULFILLED":
       state = {
         lastUpdated: new Date(),
         responseChildren: action.payload.data.data.children
       };
     break;
-    case "GET_POSTS_ERROR":
+    case "GET_REDDIT_REJECTED":
+    case "GET_REDDIT_FAIL":
       return state;
       break;
   }

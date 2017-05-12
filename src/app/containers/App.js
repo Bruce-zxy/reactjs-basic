@@ -10,14 +10,14 @@ import {getPostsThunk, getPostsPromise} from "../actions/redditActions";
 
 class App extends React.Component {
   render() {
-    let articles = [
-      {
-        data: {title: "Chris"}
-      },
-      {
-        data: {title: "xyz"}
-      }
-    ];
+    // let articles = [
+    //   {
+    //     data: {title: "Chris"}
+    //   },
+    //   {
+    //     data: {title: "xyz"}
+    //   }
+    // ];
 
     return (
       <div className="container">
