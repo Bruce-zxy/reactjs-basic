@@ -6,9 +6,9 @@ import App from "./containers/App";
 
 import store from "./store";
 
-store.subscribe(() => {
-  // console.log("Store updated!", store.getState());
-});
+// store.subscribe(() => {
+//   console.log("Store updated!", store.getState());
+// });
 
 render(
   <Provider store={store}>
