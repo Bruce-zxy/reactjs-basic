@@ -1,7 +1,7 @@
 
 const redditReducer = (state = {
     lastUpdated: new Date(),
-    response: {}
+    responseChildren: []
   },
   action) => {
   switch (action.type) {
@@ -9,11 +9,15 @@ const redditReducer = (state = {
     case "GET_POSTS":
       return state;
       break;
+    case "GET_POSTS_SUCCESS":
     case "GET_POSTS_FULFILLED":
       state = {
         lastUpdated: new Date(),
-        response: action.payload
+        responseChildren: action.payload.data.data.children
       };
+    break;
+    case "GET_POSTS_ERROR":
+      return state;
       break;
   }
   return state;

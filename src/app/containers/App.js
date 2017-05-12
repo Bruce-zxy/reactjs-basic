@@ -40,7 +40,7 @@ class App extends React.Component {
         <p>
           <strong>Here is the area for Posts</strong>
         </p>
-        <Reddit articles={articles} />
+        <Reddit articles={this.props.reddit.responseChildren} />
       </div>
     );
   }

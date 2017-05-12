@@ -30,7 +30,7 @@ export const Main = (props) => {
             </button>
             <button
               className="btn btn-primary"
-              onClick={() => props.getPostsThunk()}
+              onClick={() => props.getPostsPromise()}
             >
               Posts: Promise
             </button>

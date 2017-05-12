@@ -8,8 +8,8 @@ export function getPostsThunk() {
       .then((response) => {
         console.log("Fulfilled with response: ", response);
         dispatch({
-          type: "GET_POSTS_FULFILLED",
-          payload: response.data
+          type: "GET_POSTS_SUCCESS",
+          payload: response
         })
       })
       .catch((err) => {
@@ -24,11 +24,6 @@ export function getPostsThunk() {
 export function getPostsPromise() {
   return {
     type: "GET_POSTS",
-    payload: new Promise((resolve, reject) => {
-      setTimeout(
-        () => { resolve(name); }, // this is the function which will be invoked when success
-        2000
-      );
-    })
+    payload: axios.get("https://www.reddit.com/r/frontend.json")
   }
 }
