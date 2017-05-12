@@ -5,20 +5,22 @@ import promise from "redux-promise-middleware";
 
 import math from "./reducers/mathReducer";
 import user from "./reducers/userReducer";
+import reddit from "./reducers/redditReducer";
 
-const myLogger = (store) => (next) => (action) => {
-  console.log("Logged Action: ", action);
-  next(action);
-};
+// const myLogger = (store) => (next) => (action) => {
+//   console.log("Logged Action: ", action);
+//   next(action);
+// };
 
 export default createStore(
   combineReducers({
     math: math,
-    user: user
+    user: user,
+    reddit: reddit
   }),
   {},
   applyMiddleware(
-    myLogger,
+//    myLogger,
     createLogger(),
     thunk,
     promise()

@@ -3,18 +3,19 @@ import {connect} from "react-redux";
 
 import {Main} from "../components/Main";
 import {User} from "../components/User";
-import {Posts} from "../components/Posts";
+import {Reddit} from "../components/Reddit";
 
 import {setNameThunk, setNamePromise, setAge} from "../actions/userActions";
+import {getPostsThunk, getPostsPromise} from "../actions/redditActions";
 
 class App extends React.Component {
   render() {
-    let posts = [
+    let articles = [
       {
-        title: "Chris"
+        data: {title: "Chris"}
       },
       {
-        title: "xyz"
+        data: {title: "xyz"}
       }
     ];
 
@@ -27,6 +28,8 @@ class App extends React.Component {
         <Main
           changeUsernameThunk={(name) => this.props.setNameThunk(name)}
           changeUsernamePromise={(name) => this.props.setNamePromise(name)}
+          getPostsThunk={() => this.props.getPostsThunk(name)}
+          getPostsPromise={() => this.props.getPostsPromise(name)}
         />
         <hr/>
         <p >
@@ -37,7 +40,7 @@ class App extends React.Component {
         <p>
           <strong>Here is the area for Posts</strong>
         </p>
-        <Posts posts={posts} />
+        <Reddit articles={articles} />
       </div>
     );
   }
@@ -46,12 +49,19 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    math: state.math
+    math: state.math,
+    reddit: state.reddit
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getPostsThunk: () => {
+      dispatch(getPostsThunk())
+    },
+    getPostsPromise: () => {
+      dispatch(getPostsPromise())
+    },
     setNameThunk: (name) => {
       dispatch(setNameThunk(name))
     },

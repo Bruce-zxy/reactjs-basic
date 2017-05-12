@@ -11,16 +11,28 @@ export const Main = (props) => {
         <div className="row">
           <div className="col-xs-12">
             <button
-              className="btn btn-primary"
+              className="btn btn-normal"
               onClick={() => props.changeUsernameThunk('Thunk')}
             >
-              Thunk
+              Name: Thunk
             </button>
             <button
               className="btn btn-primary"
               onClick={() => props.changeUsernamePromise('Promise')}
             >
-              Promise
+              Name: Promise
+            </button>
+            <button
+              className="btn btn-normal"
+              onClick={() => props.getPostsThunk()}
+            >
+              Posts: Thunk
+            </button>
+            <button
+              className="btn btn-primary"
+              onClick={() => props.getPostsThunk()}
+            >
+              Posts: Promise
             </button>
           </div>
         </div>
