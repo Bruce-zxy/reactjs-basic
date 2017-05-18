@@ -1,4 +1,4 @@
-//var webpack = requi//re("webpack");
+var webpack = require("webpack");
 var path = require("path");
 
 var DIST_DIR = path.resolve(__dirname, "dist");
@@ -18,7 +18,11 @@ var config = {
         include: SRC_DIR,
         loader: "babel-loader",
         query: {
-          presets: ["react", "es2015", "stage-2"]
+          presets: ["react", "es2015", "stage-2"],
+          "plugins": [
+            // 按需加载第二步
+            ["import", { libraryName: "antd", style: "css" }] // `style: true` 会加载 less 文件
+          ]
         }
       },
       {
@@ -30,7 +34,20 @@ var config = {
     		loaders: ['style-loader', 'css-loader']
 	    }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+          mangle: {
+              except: ['$super', '$', 'exports', 'require', 'module', '_']
+          },
+          compress: {
+              warnings: false
+          },
+          output: {
+              comments: false,
+          }
+      })
+  ]
 };
 
 module.exports = config;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export const Reddit = ({articles}) => (
   <ul>
     {articles.map((article, i) =>
-      <li key={i}>{article.data.title}</li>
+      <li key={i}><b>Title:</b>{article.data.title}  <b>Author:</b>{article.data.author}</li>
     )}
   </ul>
 )
