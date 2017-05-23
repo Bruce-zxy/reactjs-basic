@@ -5,6 +5,7 @@ import {Provider} from "react-redux"
 import App from "./containers/App";
 
 import store from "./store";
+import './index.css';
 
 // store.subscribe(() => {
 //   console.log("Store updated!", store.getState());

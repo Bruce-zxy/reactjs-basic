@@ -1,12 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import {connect} from "react-redux";
 
 import {Main} from "../components/Main";
 import {User} from "../components/User";
 import {Reddit} from "../components/Reddit";
 
+import { jsonServerRestClient, Admin, Resource } from 'admin-on-rest';
+
 import {setNameThunk, setNamePromise, setAge} from "../actions/userActions";
 import {getPostsThunk, getPostsPromise} from "../actions/redditActions";
+
+// in src/App.js
+import { PostList, PostEdit, PostCreate, Delete } from './posts';
+import { UserList, UserCreate } from './users';
 
 class App extends React.Component {
   render() {
@@ -41,6 +47,13 @@ class App extends React.Component {
           <strong>Here is the area for Posts</strong>
         </p>
         <Reddit articles={this.props.reddit.responseChildren} />
+        <hr/>
+
+        <Admin restClient={jsonServerRestClient('http://jsonplaceholder.typicode.com')}>
+            <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} remove={Delete} />
+            <Resource name="users" list={UserList} create={UserCreate} />
+        </Admin>
+
       </div>
     );
   }

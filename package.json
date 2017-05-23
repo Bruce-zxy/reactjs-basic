@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/YunzhiWei/reactjs-basic#readme",
   "dependencies": {
+    "admin-on-rest": "^1.0.2",
     "antd": "^2.10.0",
     "axios": "^0.16.1",
     "css-loader": "^0.28.1",
